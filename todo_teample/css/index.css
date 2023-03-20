@@ -7,3 +7,59 @@
 .main-hidden {
     display: none;
 }
+button{
+    border: none;
+    background-color:#344FA1 ;
+}
+
+.main-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-title {
+    justify-content: center;
+    align-items: center;
+    margin: 20px 80px 20px 20px;
+    padding: 0px;
+    font-size: 30px;
+}
+
+.info-photo{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    width: 80%;
+    height: 100px;
+    overflow: hidden;
+    cursor: pointer;
+
+}
+.info-photo:hover{
+    opacity: 0.8;
+}
+.photo-file{
+    display: flex;
+}
+.info-photo img{
+    width: 100%;
+}
+.change-nav{
+    position: absolute;
+    bottom: 3px;
+    right: 3px;
+
+    display: none;
+
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #344FA1;
+    color: white;
+    font-size: 30px;
+}
+
+
+
