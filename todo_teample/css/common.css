@@ -1,0 +1,50 @@
+*::-webkit-scrollbar {
+    width: 5px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #98B5FF;
+    border-radius: 5px;
+}
+
+body {
+    background-color: #98B5FF;
+}
+
+.container {
+    position: relative;
+    margin: 50px auto;
+    border: none;
+    width: 380px;
+    height: 800px;
+    background-color: #344FA1;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+input, textarea {
+    border: none;
+    outline: none;
+    padding: 5px;
+}
+
+input:focus, textarea:focus {
+    background-color: #304892;
+}
+
+/* button {
+    border: 1px solid #dbdbdb;
+    padding: 5px 10px;
+    background-color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #fafafa;
+}
+
+button:active {
+    background-color: #f0f0f0;
+} */
+
