@@ -7,20 +7,3 @@
 .main-hidden {
     display: none;
 }
-
-/* aside */
-
-.menu-aside {
-    border-left: 30px;
-}
-
-.profil-photo {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    overflow: hidden;
-}

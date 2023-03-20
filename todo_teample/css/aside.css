@@ -1,16 +1,94 @@
 .menu-aside {
+    display: flex;
+    flex-direction: column;
+    
     position: absolute;
-    top: 0px;
-    left: 0px;
+    /* top: 0px;
+    left: 0px; */
     z-index: 99;
 
-    width: 300px;
+    width: 320px;
     height: 100%;
     box-shadow: 1px 0px 5px 1px rgb(63, 62, 70);
     background-color: #042159;
     transition: left 1s ease;
 }
 
+
 .hidden-menu {
     left: -300px;
+}
+
+.aside-container {
+    margin-top: 75px;
+    margin-left: 60px;
+    background-color: #04215900;
+}
+
+button {
+    background-color: #04215900;
+}
+
+.back-button {
+    margin-left: 170px;
+    border: 2px solid #4d4d6483;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+}
+
+.profil-photo {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 5px solid #042159;
+    box-sizing: border-box;
+    overflow: hidden;
+    box-shadow: 0 0 3px 4px #D707F2;
+}
+
+.profil-photo img {
+    height: 100px;
+}
+
+.info-username {
+    margin-top: 40px;
+    font-size: 30px;
+}
+
+.info-list {
+    margin-top: 40px;
+}
+
+li {
+    margin-bottom: 18px;
+}
+
+li i {
+    color: #666681;
+    margin-right: 20px;
+}
+
+.menu-items button {
+    border: none;
+    cursor: pointer;
+}
+
+.menu-items i{
+    /* width: 30px;
+    height: 30px; */
+    font-size: 25px;
+    color: #b4b4df;
+}
+
+.menu-nav {
+    position: absolute;
+    bottom: 30px;
+    right: 20px;
 }
