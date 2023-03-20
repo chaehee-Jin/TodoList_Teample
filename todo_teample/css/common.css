@@ -3,7 +3,7 @@
 }
 
 *::-webkit-scrollbar-thumb {
-    background-color: #98B5FF;
+    background-color: #afc5ff;
     border-radius: 5px;
 }
 
@@ -15,17 +15,18 @@ body {
     position: relative;
     margin: 50px auto;
     border: none;
-    width: 380px;
-    height: 800px;
+    width: 500px;
+    height: 850px;
     background-color: #344FA1;
     overflow: hidden;
-    border-radius: 10px;
+    border-radius: 50px;
 }
 
 input, textarea {
     border: none;
     outline: none;
     padding: 5px;
+    background-color: #344FA1;
 }
 
 input:focus, textarea:focus {
