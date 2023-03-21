@@ -17,10 +17,9 @@
 </head>
 
 <body>
-    <!-- 전체 페이지 -->
     <div class="container">
         <!-- 프로필 및 간단한 개인정보 -->
-        <aside class="menu-aside">
+        <aside class="menu-aside hidden-menu">
             <div class="aside-container">
                 <!-- aside hidden button -->
                 <button class="back-button"><i class="fa-solid fa-chevron-left"></i></button>
@@ -43,7 +42,7 @@
                         </ul>
                     </div>
                 </div>
-                <!-- 버튼 누르면 인포페이지로 이동, 인포페이지와 연결 -->
+                <!-- todoList 이동 버튼, infopage 이동 버튼 -->
                 <nav class="menu-nav">
                     <a class="menu-items">
                         <button class="todoList-button"><i class="fa-solid fa-list-check"></i></button>
@@ -54,35 +53,39 @@
                 </nav>
             </div>
         </aside>
-        <!-- 투두 메인페이지 -->
-        <main class="main-container main-hidden">
-            <button>
-                <i class="fa-solid fa-grip-lines"></i>
-            </button>
-            <!-- 안녕하세요, (사용자이름)님! 띄우기 -->
-            <header class="main-header">
-                <h1 class="main-title">안녕하세요, @@님!</h1>
-            </header>
-            <!-- 투두 진행 퍼센트 창 -->
-            <div class="main-progress">
-                <h1 class="progress-title">Progress Percente</h1>
-                <!-- 진행도 퍼센트 그래프 -->
-                <div class="progress-graph">
-
+        <!-- TODO LIST -->
+        <main class="main-container todo-container">
+            <div class="page-main">
+                <header class="main-header">
+                    <button class="aside-button">
+                        <i class="fa-solid fa-grip-lines"></i>
+                    </button>
+                </header>
+                <div class="welcome-user">
+                    <!-- Welcome Message -->
+                    <h1 class="welcome-user-message">안녕하세요, @@님!</h1>
                 </div>
-            </div>
-            <!-- 투두 리스트 -->
-            <div class="main-todo">
-                <h1 class="todo-title">ToDo List</h1>
-                <!-- 투두추가 버튼 -->
-                <button class="todo-add-button"></button>
-                <ul class="todo-list">
-
-                </ul>
+                <!-- 투두 진행 퍼센트 창 -->
+                <div class="todo-progress">
+                    <h1 class="progress-title">PROGRESS</h1>
+                    <div class="progress-box">
+                        <h1>PROFRESS OF TODO</h1>
+                        <progress class="progress-graph"></progress>
+                    </div>
+                </div>
+                <!-- TODO TASKS -->
+                <div class="todo-tasks">
+                    <h1 class="todo-title">ToDo List</h1>
+                    <!-- 투두추가 버튼 -->
+                    <button class="todo-add-button"></button>
+                    <ul class="todo-list">
+    
+                    </ul>
+                </div>
             </div>
         </main>
         <!-- 유저 메인페이지 -->
-        <main class="main-container">
+        <main class="main-container main-hidden">
             <header class="main-header">
                 <h1 class="main-title">User Information</h1>
             </header>
@@ -150,17 +153,15 @@
         
     </main>
     <!-- !!메인을 하나더 만들었음 이게 css주석으로 달린 container부분 -->
-    <main class="main-container">
+    <!-- <main class="main-container">
         <header class="main-header">
             <h1 class="main-title">ToDo</h1>
             <div class="todo-input-container">
-                <!-- <i class="fa-regular fa-file-lines"></i> -->
                 <input type="text" class="todo-input" placeholder="Please enter todo...">
                 <button class="add-todo-button"><i class="fa-solid fa-plus"></i></button>
             </div>
         </header>
-
-    </main>
+    </main> -->
 
     </div>
     <!-- 팝업창(모달) -->

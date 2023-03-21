@@ -1,22 +1,103 @@
 .main-container {
-    margin: 30px 10px 30px 10px;
-    width: 550px;
+    width: 500px;
+    height: 850px;
+    overflow: hidden;
+    background-color: #344FA1;
+}
+
+.page-main {
+    margin: 75px auto;
+    width: 430px;
     height: 100%;
+    overflow: hidden;
 }
 
 .main-hidden {
     display: none;
 }
-.todo-input-container button{
+/* .todo-input-container button{
     border: none;
     background-color:#344FA1 ;
-}
+} */
 
 .main-header {
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
 }
+
+/* todoList */
+
+.aside-button {
+    justify-content: flex-start;
+    align-items: center;
+    width: 40px;
+    height: 35px;
+    
+    border: none;
+}
+
+.aside-button i {
+    font-size: 25px;
+    color: #b4b4df;
+}
+
+.welcome-user {
+    margin-top: 30px;
+}
+
+.welcome-user-message {
+    font-size: 30px;
+}
+
+.progress-title {
+    margin-top: 30px;
+    letter-spacing: 0.8px;
+    color: #b4b4df;
+}
+
+.progress-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    margin-top: 20px;
+    padding-left: 20px;
+    width: 400px;
+    height: 100px;
+    border-radius: 20px;
+
+    background-color: #042159;
+    box-shadow: 3px 3px 10px 4px #04215990;
+}
+
+.progress-box h1 {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 600;
+
+    color: #b4b4df;
+}
+
+.progress-graph {
+    margin-top: 10px;
+    width: 350px;
+}
+
+.todo-tasks {
+    margin-top: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 .main-title {
     justify-content: center;
