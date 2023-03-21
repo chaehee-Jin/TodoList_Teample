@@ -33,15 +33,11 @@ input:focus, textarea:focus {
     background-color: #304892;
 }
 
-/* button {
-    border: 1px solid #dbdbdb;
-    padding: 5px 10px;
-    background-color: white;
-    font-weight: 600;
-    cursor: pointer;
+button {
+    background-color: #ffffff00;
 }
 
-button:hover {
+/* button:hover {
     background-color: #fafafa;
 }
 

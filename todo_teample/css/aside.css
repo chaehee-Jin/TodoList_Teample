@@ -3,8 +3,6 @@
     flex-direction: column;
     
     position: absolute;
-    /* top: 0px;
-    left: 0px; */
     z-index: 99;
 
     width: 320px;
