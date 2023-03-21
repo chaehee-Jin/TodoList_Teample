@@ -34,10 +34,7 @@ class InformationEvent {
                 infoInputContainer.querySelector(".info-input").disabled = false;
 
             });
-
-
         }
-
     }
     addEventSaveAboutMeClick() {
         const saveAboutMeButton = document.querySelector(".s-aboutme");
@@ -87,8 +84,6 @@ class InformationEvent {
 
 
             localStorage.setItem("userInfo", JSON.stringify(userInfo));
-
-
         }
     }
 }
