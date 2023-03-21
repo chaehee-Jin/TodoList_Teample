@@ -7,7 +7,7 @@
 .main-hidden {
     display: none;
 }
-button{
+.todo-input-container button{
     border: none;
     background-color:#344FA1 ;
 }

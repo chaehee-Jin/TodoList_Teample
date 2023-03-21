@@ -25,7 +25,7 @@
     background-color: #042159;
 }
 
-button {
+.menu-aside button {
     background-color: #042159;
 }
 
@@ -36,6 +36,12 @@ button {
     width: 45px;
     height: 45px;
     cursor: pointer;
+    transition: box-shadow 0.5s ease, border-color 0.5s ease;
+}
+
+.back-button:hover {
+    box-shadow: 0 0 15px -1px #D707F2 inset, 0 0 20px 1px #D707F2;
+    border-color: #f2f2f2;
 }
 
 .profil-photo {
@@ -51,11 +57,22 @@ button {
     box-sizing: border-box;
     overflow: hidden;
     box-shadow: 0 0 3px 4px #D707F2;
+    transition: border 0.5s ease;
+}
+
+.profil-photo:hover {
+    border: 3px solid #f2f2f2;
+    box-shadow: 0 0 15px -1px #D707F2 inset, 0 0 20px 1px #D707F2;
 }
 
 .profil-photo img {
     height: 100px;
+    transition: transform 0.2s ease;
 }
+
+.profil-photo:hover img {
+    transform: scale(1.1);
+  }
 
 .info-username {
     margin-top: 40px;
@@ -78,14 +95,15 @@ li i {
 .menu-items button {
     width: 50px;
     height: 50px;
-    border: none;
+    border: 1px double #ffffff00;
     border-radius: 50%;    
     cursor: pointer;
-    transition: box-shadow 0.5s ease;
+    transition: box-shadow 0.5s ease, border-color 0.5s ease;
 }
 
 .menu-items button:hover {
-    box-shadow: inset 0 0 3px 4px #D707F250, 0 0 3px 4px #D707F250;
+    box-shadow: 0 0 15px -1px #D707F2 inset, 0 0 20px 1px #D707F2;
+    border-color: #f2f2f2
 }
 
 .menu-items i{
