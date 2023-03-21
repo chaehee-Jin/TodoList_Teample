@@ -40,9 +40,9 @@ class InformationEvent {
 
     }
     addEventAboutMeSaveClick() {
-        const aboutMeSaveButton = document.querySelector(".modify-button-aboutme");
+        const aboutMeSaveButton = document.querySelector(".s-aboutme");
         aboutMeSaveButton.onclick = () => {
-            const aboutMeModifyButton = document.querySelector(".modify-button-aboutme");
+            const aboutMeModifyButton = document.querySelector(".m-aboutme");
             aboutMeSaveButton.classList.remove("button-hidden");
             aboutMeModifyButton.classList.add("button-hidden");
 
@@ -59,9 +59,9 @@ class InformationEvent {
         }
     }
     addEventIntroduceModifyClick() {
-        const IntroduceModifyButton = document.querySelector(".modify-button-introduce");
+        const IntroduceModifyButton = document.querySelector(".m-introduce");
         IntroduceModifyButton.onclick = () => {
-            const IntroduceSaveButton = document.querySelector(".modify-button-introduce");
+            const IntroduceSaveButton = document.querySelector(".s-introduce");
             IntroduceSaveButton.classList.remove("button-hidden");
             IntroduceModifyButton.classList.add("button-hidden");
             const introduceInput = document.querySelector(".introduce-input");
@@ -71,9 +71,9 @@ class InformationEvent {
 
     }
     addEventIntroduceSaveClick() {
-        const IntroduceSaveButton = document.querySelector(".modify-button-introduce");
+        const IntroduceSaveButton = document.querySelector(".s-introduce");
         IntroduceSaveButton.onclick = () => {
-            const IntroduceModifyButton = document.querySelector(".modify-button-aboutme");
+            const IntroduceModifyButton = document.querySelector(".m-introduce");
             IntroduceSaveButton.classList.remove("button-hidden");
             IntroduceModifyButton.classList.add("button-hidden");
             const introduceInput = document.querySelector(".introduce-input");
@@ -113,7 +113,7 @@ class InformationService {
         const infoPhoto = localStorage.getItem("infoPhoto");
         if (localStorage.getItem("infoPhoto") == null) {
 
-            infoPhotoImg.src = "./images/noimage.jpg"
+            infoPhotoImg.src = "./image/cat.jpg"
         } else {
             infoPhotoImg.src = infoPhoto;
 

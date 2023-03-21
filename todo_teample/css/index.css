@@ -164,6 +164,10 @@
     cursor: pointer;
 }
 
+.photo-button:hover{
+    opacity: 0.8;
+}
+
 
 .modify-button,
 .save-button {
@@ -173,6 +177,9 @@
     margin: -5px;
 
 
+}
+.modify-button:hover, .save-button:hover{
+    opacity: 0.8;
 }
 
 .change-nav {
