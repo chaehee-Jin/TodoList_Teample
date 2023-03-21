@@ -79,81 +79,84 @@
                     <!-- 투두추가 버튼 -->
                     <button class="todo-add-button"></button>
                     <ul class="todo-list">
-    
+
                     </ul>
                 </div>
             </div>
         </main>
-        <!-- 유저 메인페이지 -->
-        <main class="main-container main-hidden">
-            <header class="main-header">
-                <h1 class="main-title">User Information</h1>
-            </header>
-            <!-- 유저 프로필 이미지(변경 및 삭제 가능) -->
-            <div class="info-photo">
-                <form class="photo-form">
-                    <input type="file" class="photo-file" name="file">
-                </form>
-                <img src="">
-                <div class="change-nav"></div>
-            </div>
-            <!-- 유저 프로필 내용 -->
-            <div class="info-main">
-                <!-- 유저 정보(이름, 전화번호, 이메일, 홈페이지 주소) -->
-                <!-- About me 타이틀(수정, 삭제 버튼) -->
-                <h1 class="info-title">
-                    About Me
-                    <button>
-
-                        <button class="modify-button-aboutme">
-                            <!-- !!톱니바퀴 모양을 수정버튼으로 줌, 그래서 하나만 필요!! -->
-                            <i class="fa-solid fa-gear"></i>
-
-
-                        </button>
-                </h1>
-                <!-- 유저 정보 입력창 -->
-                <div class="info-detail">
-                    <div class="detail-left">
-                        <div class="info-input-container">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" class="info-input" autocomplete='off'>
-                        </div>
-                        <div class="info-input-container">
-                            <label for="email">e-Mail</label>
-                            <input type="text" id="email" class="info-input" autocomplete='off'>
-                        </div>
-                    </div>
-                    <div class="detail-right">
-                        <div class="info-input-container">
-                            <label for="phone">Phone</label>
-                            <input type="text" id="phone" class="info-input" autocomplete='off'>
-                        </div>
-                        <div class="info-input-container">
-                            <label for="github">Instargram</label>
-                            <input type="text" id="instargram" class="info-input" autocomplete='off'>
-                        </div>
-                    </div>
+       <!-- 유저 메인페이지 -->
+        <main class="main-container user-container">
+            <div class="page-main">
+                <header class="main-header">
+                    <h1 class="main-title">User Information</h1>
+                </header>
+                <!-- 유저 프로필 이미지(변경 및 삭제 가능) -->
+                <div class="info-photo">
+                    <form class="photo-form">
+                        <input type="file" class="photo-file" name="file">
+                    </form>
+                    <img class="photo" src="./image/cat.jpg">
+                    <div class="change-nav"></div>
                 </div>
-                <!-- 유저 정보(본인 소개) -->
-                <div class="info-introduce">
-                    <!-- Self Introduce 타이틀(수정, 삭제 버튼) -->
+                <!-- 유저 프로필 내용 -->
+                <div class="info-main">
+                    <!-- 유저 정보(이름, 전화번호, 이메일, 홈페이지 주소) -->
+                    <!-- About me 타이틀(수정, 삭제 버튼) -->
                     <h1 class="info-title">
-                        Self Introduction
-                        <button class="modify-button-introduce">
-                            <!-- !!톱니바퀴 모양을 수정버튼으로 줌, 그래서 하나만 필요!! -->
+                        About Me
+                        <button class="modify-button m-aboutme">
+                            <!-- !!톱니바퀴 모양과 체크모양을 수정버튼으로 줌 -->
                             <i class="fa-solid fa-gear"></i>
-
+                        </button>
+                        <button class="modify-button s-aboutme button-hidden">
+                            <i class="fa-regular fa-circle-check"></i>
                         </button>
                     </h1>
-                    <!-- 자기소개 입력창 -->
-                    <textarea class="introduce-input" disabled></textarea>
+                    <!-- 유저 정보 입력창 -->
+                    <div class="info-detail">
+                        <div class="detail-left">
+                            <div class="info-input-container">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" class="info-input" autocomplete='off'>
+                            </div>
+                            <div class="info-input-container">
+                                <label for="email">e-Mail</label>
+                                <input type="text" id="email" class="info-input" autocomplete='off'>
+                            </div>
+                        </div>
+                        <div class="detail-right">
+                            <div class="info-input-container">
+                                <label for="phone">Phone</label>
+                                <input type="text" id="phone" class="info-input" autocomplete='off'>
+                            </div>
+                            <div class="info-input-container">
+                                <label for="github">Instargram</label>
+                                <input type="text" id="instargram" class="info-input" autocomplete='off'>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 유저 정보(본인 소개) -->
+                    <div class="info-introduce">
+                        <!-- Self Introduce 타이틀(수정, 삭제 버튼) -->
+                        <h1 class="info-title">
+                            Self Introduction
+                            <button class="modify-button m-introduce">
+                                <!-- !!톱니바퀴 모양을 수정버튼으로 줌, 그래서 하나만 필요!! -->
+                                <i class="fa-solid fa-gear"></i>
+                            </button>
+                            <button class="modify-button s-introduce button-hidden">
+                                <i class="fa-regular fa-circle-check"></i>
+                            </button>
+                        </h1>
+                        <!-- 자기소개 입력창 -->
+                        <textarea class="introduce-input" disabled></textarea>
+                    </div>
                 </div>
             </div>
-        
-    </main>
-    <!-- !!메인을 하나더 만들었음 이게 css주석으로 달린 container부분 -->
-    <!-- <main class="main-container">
+
+        </main>
+        <!-- !!메인을 하나더 만들었음 이게 css주석으로 달린 container부분 -->
+        <!-- <main class="main-container">
         <header class="main-header">
             <h1 class="main-title">ToDo</h1>
             <div class="todo-input-container">
