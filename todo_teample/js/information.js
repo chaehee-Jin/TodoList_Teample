@@ -22,12 +22,12 @@ class InformationEvent {
 
         }
     }
-    addEventAboutMeModifyClick() {
-        const aboutMeModifyButton = document.querySelector(".m-aboutme");
-        aboutMeModifyButton.onclick = () => {
-            const aboutMeSaveButton = document.querySelector(".s-aboutme");
-            aboutMeSaveButton.classList.remove("button-hidden");
-            aboutMeModifyButton.classList.add("button-hidden");
+    addEventModifyAboutMeClick() {
+        const modifyAboutMeButton = document.querySelector(".m-aboutme");
+        modifyAboutMeButton.onclick = () => {
+            const saveAboutMeButton = document.querySelector(".s-aboutme");
+            saveAboutMeButton.classList.remove("button-hidden");
+            modifyAboutMeButton.classList.add("button-hidden");
 
             const infoInputContainers = document.querySelectorAll(".info-input-container");
             infoInputContainers.forEach(infoInputContainer => {
@@ -39,12 +39,12 @@ class InformationEvent {
         }
 
     }
-    addEventAboutMeSaveClick() {
-        const aboutMeSaveButton = document.querySelector(".s-aboutme");
-        aboutMeSaveButton.onclick = () => {
-            const aboutMeModifyButton = document.querySelector(".m-aboutme");
-            aboutMeSaveButton.classList.remove("button-hidden");
-            aboutMeModifyButton.classList.add("button-hidden");
+    addEventSaveAboutMeClick() {
+        const saveAboutMeButton = document.querySelector(".s-aboutme");
+        saveAboutMeButton.onclick = () => {
+            const modifyAboutMeButton = document.querySelector(".m-aboutme");
+            saveAboutMeButton.classList.remove("button-hidden");
+            modifyAboutMeButton.classList.add("button-hidden");
 
             const infoInputContainers = document.querySelectorAll(".info-input-container");
             const userInfo = InformationService.getInstance().userInfo;
@@ -58,24 +58,26 @@ class InformationEvent {
             localStorage.setItem("userInfo", JSON.stringify(userInfo));
         }
     }
-    addEventIntroduceModifyClick() {
-        const IntroduceModifyButton = document.querySelector(".m-introduce");
-        IntroduceModifyButton.onclick = () => {
-            const IntroduceSaveButton = document.querySelector(".s-introduce");
-            IntroduceSaveButton.classList.remove("button-hidden");
-            IntroduceModifyButton.classList.add("button-hidden");
+    addEventModifyIntroduceClick() {
+        const modifyIntroduceButton = document.querySelector(".m-introduce");
+        modifyIntroduceButton.onclick = () => {
+
+            const saveIntroduceButton = document.querySelector(".s-introduce");
+            saveIntroduceButton.classList.remove("button-hidden");
+            modifyIntroduceButton.classList.add("button-hidden");
+
             const introduceInput = document.querySelector(".introduce-input");
             introduceInput.disabled = false;
 
         }
 
     }
-    addEventIntroduceSaveClick() {
-        const IntroduceSaveButton = document.querySelector(".s-introduce");
-        IntroduceSaveButton.onclick = () => {
-            const IntroduceModifyButton = document.querySelector(".m-introduce");
-            IntroduceSaveButton.classList.remove("button-hidden");
-            IntroduceModifyButton.classList.add("button-hidden");
+    addEventSaveIntroduceClick() {
+        const saveIntroduceButton = document.querySelector(".s-introduce");
+        saveIntroduceButton.onclick = () => {
+            const modifyIntrodcueButton = document.querySelector(".m-introduce");
+            saveIntroduceButton.classList.remove("button-hidden");
+            modifyIntrodcueButton.classList.add("button-hidden");
             const introduceInput = document.querySelector(".introduce-input");
             introduceInput.disabled = true;
 
@@ -137,8 +139,8 @@ class InformationService {
             })
 
         });
-        
-        if(typeof this.userInfo.introduce == 'undefined'){
+
+        if (typeof this.userInfo.introduce == 'undefined') {
             return;
         }
         const introduceInput = document.querySelector(".introduce-input");
@@ -163,7 +165,7 @@ class FileService {
         let changFlag = true;
 
         if (fileValue.size == 0) {
-           return;
+            return;
         }
 
         this.showPreview(fileValue);

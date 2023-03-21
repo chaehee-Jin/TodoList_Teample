@@ -178,6 +178,10 @@
 
 
 }
+.button-hidden{
+    display: none;
+}
+
 .modify-button:hover, .save-button:hover{
     opacity: 0.8;
 }
