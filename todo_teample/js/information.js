@@ -1,12 +1,12 @@
 class InformationEvent {
     static #instance = null;
     static getInstance() {
-        if (this.#instance == null) {
+        if(this.#instance == null) {
             this.#instance = new InformationEvent();
-
         }
         return this.#instance;
     }
+
     addEventPhotoChangeClick() {
         const infoPhoto = document.querySelector(".info-photo");
         infoPhoto.onclick = () => {
@@ -14,14 +14,14 @@ class InformationEvent {
             photoFile.click();
         }
     }
+
     addEventPhotoChange() {
         const photoFile = document.querySelector(".photo-file");
         photoFile.onchange = () => {
             FileService.getInstance().changePhoto();
-
-
         }
     }
+
     addEventModifyAboutMeClick() {
         const modifyAboutMeButton = document.querySelector(".m-aboutme");
         modifyAboutMeButton.onclick = () => {
@@ -96,9 +96,8 @@ class InformationEvent {
 class InformationService {
     static #instance = null;
     static getInstance() {
-        if (this.#instance == null) {
+        if(this.#instance == null) {
             this.#instance = new InformationService();
-
         }
         return this.#instance;
     }
@@ -108,82 +107,72 @@ class InformationService {
     loadInfo() {
         this.loadInfoPhoto();
         this.loadInfoUser();
-
     }
+
     loadInfoPhoto() {
         const infoPhotoImg = document.querySelector(".info-photo img");
         const infoPhoto = localStorage.getItem("infoPhoto");
-        if (localStorage.getItem("infoPhoto") == null) {
-
-            infoPhotoImg.src = "./image/cat.jpg"
-        } else {
+        if(infoPhoto == null) {
+            infoPhotoImg.src = "./image/noimage.jpg";
+        }else {
             infoPhotoImg.src = infoPhoto;
-
-
         }
-
     }
 
     loadInfoUser() {
         this.userInfo = JSON.parse(localStorage.getItem("userInfo"));
-        if (this.userInfo == null) {
+
+        if(this.userInfo == null) {
             this.userInfo = {};
             return;
         }
         Object.keys(this.userInfo).forEach(key => {
             const infoInput = document.querySelectorAll(".info-input");
             infoInput.forEach(input => {
-                if (input.id == key) {
+                if(input.id == key) {
                     input.value = this.userInfo[key];
                 }
             })
-
         });
 
-        if (typeof this.userInfo.introduce == 'undefined') {
+        if(typeof this.userInfo.introduce == "undefined"){
             return;
         }
         const introduceInput = document.querySelector(".introduce-input");
         introduceInput.value = this.userInfo.introduce;
-
     }
 }
 
 class FileService {
     static #instance = null;
     static getInstance() {
-        if (this.#instance == null) {
+        if(this.#instance == null) {
             this.#instance = new FileService();
-
         }
         return this.#instance;
     }
+
     changePhoto() {
         const photoForm = document.querySelector(".photo-form");
         const formData = new FormData(photoForm);
         const fileValue = formData.get("file");
-        let changFlag = true;
 
-        if (fileValue.size == 0) {
+        if(fileValue.size == 0) {
             return;
         }
 
         this.showPreview(fileValue);
-
-
     }
+
     showPreview(fileValue) {
         const fileReader = new FileReader();
 
         fileReader.readAsDataURL(fileValue);
 
         fileReader.onload = (e) => {
-            const photoimg = document.querySelector(".info-photo img");
-            photoimg.src = e.target.result;
-            localStorage.setItem("infoPhoto", photoimg.src);
-
-
+            const photoImg = document.querySelector(".info-photo img");
+            photoImg.src = e.target.result;
+            localStorage.setItem("infoPhoto", photoImg.src);
         }
-
     }
 }
