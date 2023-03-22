@@ -163,6 +163,7 @@ progress {
 
 .todo-content-list li{
     display: flex;
+    justify-content: space-between;
     align-items: center;
     margin-top: 10px;
     padding-left: 15px;
@@ -175,13 +176,18 @@ progress {
     box-shadow: 3px 3px 10px 4px #04215990;
 }
 
+.input-label {
+    display: flex;
+    align-items: center;
+}
+
 .todo-content-list input[type="checkbox"]{
     display: none;
 }
 
 .todo-content-list input[type="checkbox"] + label{
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     width: 30px;
     height: 30px;
@@ -206,11 +212,22 @@ progress {
     text-align: center;
     border-radius: 30px;
     background-color: #D707F2;
-
 }
 
+.input-label input[type="checkbox"]:checked ~ .todoList-content {
+    text-decoration: line-through;
+}
 
+.todo-remove-button {
+    margin-right: 15px;
+    border: none;
+    cursor: pointer;
+}
 
+.todo-modify-button {
+    border: none;
+    cursor: pointer;
+}
 
 
 

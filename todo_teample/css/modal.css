@@ -52,6 +52,10 @@
     color: black;
 }
 
+.todo-modify-input {
+    color: black;
+}
+
 .modal-footer {
     display: flex;
     justify-content: flex-end;
@@ -62,4 +66,11 @@
 
 .modal-footer button {
     margin-left: 5px;
+    border: none;
+    color: black;
+}
+
+.modal-footer button:hover {
+    border-radius: 1px;
+    box-shadow: 1px 1px 2px 3px #b4b4df;
 }

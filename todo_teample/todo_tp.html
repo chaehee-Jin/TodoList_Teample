@@ -25,11 +25,10 @@
                 <button class="back-button"><i class="fa-solid fa-chevron-left"></i></button>
                 <!-- user img, name -->
                 <header class="aside-header">
-                    <div class="profile-photo">
+                    <div class="profil-photo">
                         <form class="photo-form">
-                            <input type="file" name="file">
                         </form>
-                        <img src="">
+                        <img src="./image/11.jpg">
                     </div>
                 </header>
                 <!-- 유저 이름, 정보 -->
@@ -57,7 +56,7 @@
             </div>
         </aside>
         <!-- TODO LIST -->
-        <main class="main-container todo-container main-hidden">
+        <main class="main-container todo-container">
             <div class="page-main">
                 <header class="main-header">
                     <button class="aside-button">
@@ -79,23 +78,26 @@
                 <!-- TODO TASKS -->
                 <div class="todo-tasks">
                     <h1 class="todo-title">TODAY'S TASKS</h1>
-                    <!-- 투두추가 버튼 -->
                     <div class="todo-input-container">
                         <button class="todo-add-button"><i class="fa-solid fa-plus"></i></button>
                         <input type="text" class="todo-input" placeholder="What is today's todo?">
                     </div>
                     <ul class="todo-content-list">
-                        <li><input type="checkbox" id="todoList-check"><label for="todoList-check"></label> 할일</li>
-                        <li><input type="checkbox" id="todoList-check2"><label for="todoList-check2"></label> 할일</li>
-                        <li><input type="checkbox" id="todoList-check2"><label for="todoList-check2"></label> 할일</li>
-                        <li><input type="checkbox" id="todoList-check2"><label for="todoList-check2"></label> 할일</li>
-                        <li><input type="checkbox" id="todoList-check2"><label for="todoList-check2"></label> 할일</li>
-                        <li><input type="checkbox" id="todoList-check2"><label for="todoList-check2"></label> 할일</li>
-                        <li><input type="checkbox" id="todoList-check2"><label for="todoList-check2"></label> 할일</li>
+                        <!-- <li>
+                            <div class="input-label">
+                                <input type="checkbox" id="todoList-check">
+                                <label for="todoList-check"></label> 할일
+                            </div>
+                            <div>
+                                <button class="todo-modify-button"><i class="fa-regular fa-pen-to-square"></i></button>
+                                <button class="todo-remove-button"><i class="fa-solid fa-xmark"></i></button>
+                            </div>
+                        </li> -->
                     </ul>
                 </div>
             </div>
         </main>
+        
         <!-- 유저 메인페이지 -->
         <main class="main-container user-container">
             <div class="page-main">
