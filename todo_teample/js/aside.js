@@ -110,5 +110,15 @@ class fileService {
         this.previewShow(fileValue);
 
     }
-}
+    previewShow(fileValue){
+        const readerFile = new ReaderFile();
 
+        readerFile.readAsDataURL(fileValue);
+
+        readerFile.onload = (e) => {
+            const profilePhotoImg = document.querySelector(".profile-photo");
+            profilePhotoImg.src = e.target.result;
+            localStorage.setItem("profilePhoto", profilePhotoImg.src);
+        }
+    }
+}
