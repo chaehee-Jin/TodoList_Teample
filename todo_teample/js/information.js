@@ -84,9 +84,9 @@ class InformationEvent {
         const saveIntroduceButton = document.querySelector(".save-introduce");
         saveIntroduceButton.onclick = () => {
 
-            const modifyIntrodcueButton = document.querySelector(".modify-introduce");
-            saveIntroduceButton.classList.remove("button-hidden");
-            modifyIntrodcueButton.classList.add("button-hidden");
+            const modifyIntroduceButton = document.querySelector(".modify-introduce");
+            modifyIntroduceButton.classList.remove("button-hidden");
+            saveIntroduceButton.classList.add("button-hidden");
 
             const introduceInput = document.querySelector(".introduce-input");
             introduceInput.disabled = true;
