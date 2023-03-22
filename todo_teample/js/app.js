@@ -2,6 +2,7 @@ window.onload = () => {
     AsideService.getInstance().loadAside();
     AsideEvent.getInstance().addEventShowAsideButton();
     AsideEvent.getInstance().addEventMainChange();
+    TodoEvent.getInstance().addWelcomeMessage();
     TodoEvent.getInstance().addEventAddTodoClick();
     TodoEvent.getInstance().addEventAddTodoKeyUp();
     TodoService.getInstance();

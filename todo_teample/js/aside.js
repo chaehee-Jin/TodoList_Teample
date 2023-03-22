@@ -64,59 +64,16 @@ class AsideService {
         }
     }
     loadAsideUser() {
-        this.asideinfo = JSON.parse(localStorage.getItem("aside-info"))
-
-        if (this.asideinfo == null) {
-            this.asideinfo = {};
-            return;
-        }
-        Object.keys(this.asideinfo).forEach(key => {
-            const profileInput = document.querySelectorAll(".info-list");
-            profileInput.forEach(input => {
-                if (input.id == key) {
-                    input.value = this.userprofile[key];
-                }
-            })
-        });
-        if (typeof this.userprofile.introduce == "undefined") {
-            return;
-        }
-        const infoList = document.querySelector(".info-list");
-        infoList.value = this.asideinfo.introduce;
-
-
-    }
-}
-class fileService {
-    static #instance = null;
-    static getInstnace() {
-        if (this.#instance == null) {
-            this.#instance = new fileService();
-
-        }
-        return this.#instance;
-    }
-    photoChange(){
-        const photoform = document.querySelector(".photo-form");
-        const formData = new FormData(photoform);
-        const fileValue = formData.get("file");
-        let changFlag = true;
-
-        if(fileValue.size == 0){
-            return;
-        }
-        this.previewShow(fileValue);
-
-    }
-    previewShow(fileValue){
-        const readerFile = new ReaderFile();
-
-        readerFile.readAsDataURL(fileValue);
-
-        readerFile.onload = (e) => {
-            const profilePhotoImg = document.querySelector(".profile-photo");
-            profilePhotoImg.src = e.target.result;
-            localStorage.setItem("profilePhoto", profilePhotoImg.src);
-        }
+        const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+        const asideNmae = document.querySelector(".aside-username");
+        asideNmae.innerHTML = `
+            <h1 class="info-username">${userInfo.name}</h1>
+        `;
+        const asideInfo = document.querySelector(".aside-userinfo");
+        asideInfo.innerHTML = `
+            <li><i class="fa-solid fa-phone"></i>${userInfo.phone}</li>
+            <li><i class="fa-solid fa-at"></i>${userInfo.email}</li>
+            <li><i class="fa-brands fa-instagram"></i>${userInfo.instargram}</li>
+        `;
     }
 }

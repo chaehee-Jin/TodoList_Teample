@@ -7,6 +7,10 @@ class TodoEvent {
         return this.#instance;
     }
 
+    addWelcomeMessage() {
+        TodoService.getInstance().loadTodoUsername();
+    }
+
     addEventAddTodoClick() {
         const addTodoButton = document.querySelector(".todo-add-button");
         addTodoButton.onclick = () => {
@@ -70,6 +74,14 @@ class TodoService {
     updateLocalStorage() {
         localStorage.setItem("todoList", JSON.stringify(this.todoList));
         this.loadTodoList();
+    }
+
+    loadTodoUsername() {
+        const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+        const welcomeMessage = document.querySelector(".welcome-user");
+        welcomeMessage.innerHTML = `
+            <h1 class="welcome-user-message">안녕하세요, ${userInfo.name}님!</h1>
+        `;
     }
 
     addTodo() {
