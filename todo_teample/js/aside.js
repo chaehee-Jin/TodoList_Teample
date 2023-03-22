@@ -54,18 +54,16 @@ class AsideService {
         this.loadAsidePhoto();
         this.loadAsideUser();
     }
-    loadProfilePhoto() {
-        const profilePhotoImg = document.querySelector(".profile-photo")
-        // 여기에서 어디경로로 지정해야하는지 모르겠음 
-        const profilePhoto = localStorage.getItem("profilePhoto");
-        if (localStorage.getItem("profilePhoto") == null) {
-
+    loadAsidePhoto() {
+        const profilePhotoImg = document.querySelector(".profile-photo img")
+        const profilePhoto = localStorage.getItem("infoPhoto");
+        if (profilePhoto == null) {
             profilePhotoImg.src = "./image/noimage.jpg";
         } else {
-            profilePhotoImg.scr = profilePhoto;
+            profilePhotoImg.src = profilePhoto;
         }
     }
-    loadProfileUser() {
+    loadAsideUser() {
         this.asideinfo = JSON.parse(localStorage.getItem("aside-info"))
 
         if (this.asideinfo == null) {

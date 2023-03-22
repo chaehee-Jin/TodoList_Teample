@@ -42,7 +42,7 @@
     border-color: #f2f2f2;
 }
 
-.profil-photo {
+.profile-photo {
     position: relative;
     display: flex;
     justify-content: center;
@@ -58,17 +58,17 @@
     transition: border 0.5s ease;
 }
 
-.profil-photo:hover {
+.profile-photo:hover {
     border: 3px solid #f2f2f2;
     box-shadow: 0 0 15px -1px #D707F2 inset, 0 0 20px 1px #D707F2;
 }
 
-.profil-photo img {
+.profile-photo img {
     height: 100px;
     transition: transform 0.2s ease;
 }
 
-.profil-photo:hover img {
+.profile-photo:hover img {
     transform: scale(1.1);
   }
 

@@ -120,8 +120,7 @@ class InformationService {
     loadInfoPhoto() {
         const infoPhotoImg = document.querySelector(".info-photo img");
         const infoPhoto = localStorage.getItem("infoPhoto");
-        if(localStorage.getItem("infoPhoto") == null) {
-
+        if(infoPhoto == null) {
             infoPhotoImg.src = "./image/noimage.jpg";
         }else {
             infoPhotoImg.src = infoPhoto;

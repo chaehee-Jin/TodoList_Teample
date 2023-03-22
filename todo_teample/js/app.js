@@ -1,4 +1,5 @@
 window.onload = () => {
+    AsideService.getInstance().loadAside();
     AsideEvent.getInstance().addEventShowAsideButton();
     AsideEvent.getInstance().addEventMainChange();
     TodoEvent.getInstance().addEventAddTodoClick();
