@@ -54,7 +54,7 @@
             </div>
         </aside>
         <!-- TODO LIST -->
-        <main class="main-container todo-container">
+        <main class="main-container todo-container main-hidden">
             <div class="page-main">
                 <header class="main-header">
                     <button class="aside-button">
@@ -108,7 +108,7 @@
                         <form class="photo-form">
                             <input type="file" class="photo-file" name="file">
                         </form>
-                        <img src="">
+                        <img src="./image/noimage.jpg">
                         <div class="change-nav">
                             <button class="photo-button">
                                 <i class="fa-solid fa-camera"></i>
@@ -123,11 +123,11 @@
                     <!-- About me 타이틀(수정, 삭제 버튼) -->
                     <h1 class="info-title">
                         About Me
-                        <button class="modify-button m-aboutme">
+                        <button class="modify-button modify-aboutme">
                             <!-- !!톱니바퀴 모양과 체크모양을 수정버튼으로 줌 -->
                             <i class="fa-solid fa-gear"></i>
                         </button>
-                        <button class="modify-button s-aboutme button-hidden ">
+                        <button class="modify-button save-aboutme button-hidden ">
                             <i class="fa-regular fa-circle-check"></i>
                         </button>
                     </h1>
@@ -136,21 +136,21 @@
                         <div class="detail-left">
                             <div class="info-input-container">
                                 <label for="name">Name</label>
-                                <input type="text" id="name" class="info-input" autocomplete='off'>
+                                <input type="text" id="name" class="info-input">
                             </div>
                             <div class="info-input-container">
                                 <label for="email">e-Mail</label>
-                                <input type="text" id="email" class="info-input" autocomplete='off'>
+                                <input type="text" id="email" class="info-input">
                             </div>
                         </div>
                         <div class="detail-right">
                             <div class="info-input-container">
                                 <label for="phone">Phone</label>
-                                <input type="text" id="phone" class="info-input" autocomplete='off'>
+                                <input type="text" id="phone" class="info-input">
                             </div>
                             <div class="info-input-container">
                                 <label for="github">Instargram</label>
-                                <input type="text" id="instargram" class="info-input" autocomplete='off'>
+                                <input type="text" id="instargram" class="info-input">
                             </div>
                         </div>
                     </div>
@@ -160,10 +160,10 @@
                         <h1 class="info-title">
                             Self Introduction
                             <!-- !!톱니바퀴 모양과 체크모양을 수정버튼으로 줌 -->
-                            <button class="modify-button m-introduce">
+                            <button class="modify-button modify-introduce">
                                 <i class="fa-solid fa-gear"></i>
                             </button>
-                            <button class="modify-button s-introduce button-hidden">
+                            <button class="modify-button save-introduce button-hidden">
                                 <i class="fa-regular fa-circle-check"></i>
                             </button>
                         </h1>

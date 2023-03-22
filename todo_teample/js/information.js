@@ -12,6 +12,7 @@ class InformationEvent {
         infoPhoto.onclick = () => {
             const photoFile = document.querySelector(".photo-file");
             photoFile.click();
+            // this.addEventPhotoChangeClick();
         }
     }
 
@@ -23,9 +24,9 @@ class InformationEvent {
     }
 
     addEventModifyAboutMeClick() {
-        const modifyAboutMeButton = document.querySelector(".m-aboutme");
+        const modifyAboutMeButton = document.querySelector(".mpdify-aboutme");
         modifyAboutMeButton.onclick = () => {
-            const saveAboutMeButton = document.querySelector(".s-aboutme");
+            const saveAboutMeButton = document.querySelector(".save-aboutme");
             saveAboutMeButton.classList.remove("button-hidden");
             modifyAboutMeButton.classList.add("button-hidden");
 
@@ -37,9 +38,9 @@ class InformationEvent {
         }
     }
     addEventSaveAboutMeClick() {
-        const saveAboutMeButton = document.querySelector(".s-aboutme");
+        const saveAboutMeButton = document.querySelector(".save-aboutme");
         saveAboutMeButton.onclick = () => {
-            const modifyAboutMeButton = document.querySelector(".m-aboutme");
+            const modifyAboutMeButton = document.querySelector(".modify-aboutme");
             saveAboutMeButton.classList.remove("button-hidden");
             modifyAboutMeButton.classList.add("button-hidden");
 
@@ -56,10 +57,10 @@ class InformationEvent {
         }
     }
     addEventModifyIntroduceClick() {
-        const modifyIntroduceButton = document.querySelector(".m-introduce");
+        const modifyIntroduceButton = document.querySelector(".modify-introduce");
         modifyIntroduceButton.onclick = () => {
 
-            const saveIntroduceButton = document.querySelector(".s-introduce");
+            const saveIntroduceButton = document.querySelector(".save-introduce");
             saveIntroduceButton.classList.remove("button-hidden");
             modifyIntroduceButton.classList.add("button-hidden");
 
@@ -70,11 +71,13 @@ class InformationEvent {
 
     }
     addEventSaveIntroduceClick() {
-        const saveIntroduceButton = document.querySelector(".s-introduce");
+        const saveIntroduceButton = document.querySelector(".save-introduce");
         saveIntroduceButton.onclick = () => {
-            const modifyIntrodcueButton = document.querySelector(".m-introduce");
+
+            const modifyIntrodcueButton = document.querySelector(".modify-introduce");
             saveIntroduceButton.classList.remove("button-hidden");
             modifyIntrodcueButton.classList.add("button-hidden");
+
             const introduceInput = document.querySelector(".introduce-input");
             introduceInput.disabled = true;
 
@@ -107,7 +110,8 @@ class InformationService {
     loadInfoPhoto() {
         const infoPhotoImg = document.querySelector(".info-photo img");
         const infoPhoto = localStorage.getItem("infoPhoto");
-        if(infoPhoto == null) {
+        if(localStorage.getItem("infoPhoto") == null) {
+
             infoPhotoImg.src = "./image/noimage.jpg";
         }else {
             infoPhotoImg.src = infoPhoto;
@@ -151,6 +155,7 @@ class FileService {
         const photoForm = document.querySelector(".photo-form");
         const formData = new FormData(photoForm);
         const fileValue = formData.get("file");
+        let changFlag = true;
 
         if(fileValue.size == 0) {
             return;
