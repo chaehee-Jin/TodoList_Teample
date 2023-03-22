@@ -11,4 +11,5 @@ window.onload = () => {
     InformationEvent.getInstance().addEventSaveAboutMeClick();
     InformationEvent.getInstance().addEventModifyIntroduceClick();
     InformationEvent.getInstance().addEventSaveIntroduceClick();
+    InformationEvent.getInstance().addEventShowHomeButton();
 }

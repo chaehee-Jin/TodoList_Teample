@@ -22,6 +22,16 @@ class InformationEvent {
             FileService.getInstance().changePhoto();
         }
     }
+    addEventShowHomeButton(){
+        const homeButton = document.querySelector(".home-button");
+        homeButton.onclick = () => {
+            const todoContainer = document.querySelector(".todo-container");
+            if(todoContainer.classList.contains("main-hidden")){
+                todoContainer.classList.remove("main-hidden");
+            }
+          
+        }
+    }
 
     addEventModifyAboutMeClick() {
         const modifyAboutMeButton = document.querySelector(".modify-aboutme");
