@@ -24,7 +24,7 @@ class InformationEvent {
     }
 
     addEventModifyAboutMeClick() {
-        const modifyAboutMeButton = document.querySelector(".mpdify-aboutme");
+        const modifyAboutMeButton = document.querySelector(".modify-aboutme");
         modifyAboutMeButton.onclick = () => {
             const saveAboutMeButton = document.querySelector(".save-aboutme");
             saveAboutMeButton.classList.remove("button-hidden");
@@ -152,7 +152,7 @@ class FileService {
     }
 
     changePhoto() {
-        const photoForm = document.querySelector(".photo-form");
+        const photoForm = document.querySelector(".photo-form-user");
         const formData = new FormData(photoForm);
         const fileValue = formData.get("file");
         let changFlag = true;
