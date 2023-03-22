@@ -48,6 +48,10 @@ class TodoEvent {
         });
     }
 
+    addEventCheckboxClick() {
+        const inputCheckBox = document.querySelectorAll(".input-checkbox");
+        inputCheckBox
+    }
 
 }
 
@@ -88,7 +92,8 @@ class TodoService {
         const todoInput = document.querySelector(".todo-input");
 
         const todoObj = {
-            todoContent: todoInput.value
+            todoContent: todoInput.value,
+            todoChecked: false
         }
 
         this.todoList.push(todoObj);
@@ -103,7 +108,7 @@ class TodoService {
             todoContentList.innerHTML += `
                 <li>
                     <div class="input-label">
-                        <input type="checkbox" id="todoList-check${index}">
+                        <input type="checkbox" class="input-checkbox" id="todoList-check${index}" ${todoObj.todoChecked ? "checked" : ""}>
                         <label for="todoList-check${index}"></label>
                         <span class="todoList-content">${todoObj.todoContent}</span>
                     </div>
