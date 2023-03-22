@@ -20,28 +20,22 @@ body {
     background-color: #344FA1;
     overflow: hidden;
     border-radius: 50px;
+
+    box-shadow: 3px 3px 10px 4px #04215990;
 }
 
 input, textarea {
     border: none;
     outline: none;
     padding: 5px;
-    background-color: #344FA1;
+    background-color: #ffffff00;
 }
 
 input:focus, textarea:focus {
-    background-color: #304892;
+    background-color: #ffffff00;
+    border-bottom: 1px solid #f2f2f2;
 }
 
 button {
     background-color: #ffffff00;
 }
-
-/* button:hover {
-    background-color: #fafafa;
-}
-
-button:active {
-    background-color: #f0f0f0;
-} */
-

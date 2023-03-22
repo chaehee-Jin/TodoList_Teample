@@ -81,11 +81,11 @@
     margin-top: 40px;
 }
 
-li {
+.info-list li {
     margin-bottom: 18px;
 }
 
-li i {
+.info-list li i {
     color: #666681;
     margin-right: 20px;
 }
