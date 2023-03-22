@@ -18,7 +18,7 @@
 
 <body>
     <div class="container">
-        <!-- 프로필 및 간단한 개인정보 -->
+        <!-- aside 프로필 및 간단한 개인정보 -->
         <aside class="menu-aside hidden-menu">
             <div class="aside-container">
                 <!-- aside hidden button -->
@@ -28,7 +28,7 @@
                     <div class="profil-photo">
                         <form class="photo-form">
                         </form>
-                        <img src="./11.jpg">
+                        <img src="./image/11.jpg">
                     </div>
                 </header>
                 <!-- 유저 이름, 정보 -->
@@ -42,7 +42,7 @@
                         </ul>
                     </div>
                 </div>
-                <!-- todoList 이동 버튼, infopage 이동 버튼 -->
+                <!-- todoList, infopage nav button -->
                 <nav class="menu-nav">
                     <a class="menu-items">
                         <button class="todoList-button"><i class="fa-solid fa-list-check"></i></button>
@@ -54,7 +54,7 @@
             </div>
         </aside>
         <!-- TODO LIST -->
-        <main class="main-container todo-container main-hidden">
+        <main class="main-container todo-container">
             <div class="page-main">
                 <header class="main-header">
                     <button class="aside-button">
@@ -65,21 +65,30 @@
                     <!-- Welcome Message -->
                     <h1 class="welcome-user-message">안녕하세요, @@님!</h1>
                 </div>
-                <!-- 투두 진행 퍼센트 창 -->
-                <div class="todo-progress">
+                <!-- todo progress -->
+                <div class="todo-progress-container">
                     <h1 class="progress-title">PROGRESS</h1>
                     <div class="progress-box">
-                        <h1>PROFRESS OF TODO</h1>
-                        <progress class="progress-graph"></progress>
+                        <h1>PROGRESS OF TODO</h1>
+                        <progress class="progress-graph" value="30" max="50"></progress>
                     </div>
                 </div>
                 <!-- TODO TASKS -->
                 <div class="todo-tasks">
-                    <h1 class="todo-title">ToDo List</h1>
+                    <h1 class="todo-title">TODAY'S TASKS</h1>
                     <!-- 투두추가 버튼 -->
-                    <button class="todo-add-button"></button>
-                    <ul class="todo-list">
-
+                    <div class="todo-input-container">
+                        <button class="todo-add-button"><i class="fa-solid fa-plus"></i></button>
+                        <input type="text" class="todo-input" placeholder="What is today's todo?">
+                    </div>
+                    <ul class="todo-content-list">
+                        <li><input type="checkbox" id="todoList-check"><label for="todoList-check"></label> 할일</li>
+                        <li><input type="checkbox" id="todoList-check2"><label for="todoList-check2"></label> 할일</li>
+                        <li><input type="checkbox" id="todoList-check2"><label for="todoList-check2"></label> 할일</li>
+                        <li><input type="checkbox" id="todoList-check2"><label for="todoList-check2"></label> 할일</li>
+                        <li><input type="checkbox" id="todoList-check2"><label for="todoList-check2"></label> 할일</li>
+                        <li><input type="checkbox" id="todoList-check2"><label for="todoList-check2"></label> 할일</li>
+                        <li><input type="checkbox" id="todoList-check2"><label for="todoList-check2"></label> 할일</li>
                     </ul>
                 </div>
             </div>
@@ -107,7 +116,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- 유저 프로필 내용 -->
                 <div class="info-main">
                     <!-- 유저 정보(이름, 전화번호, 이메일, 홈페이지 주소) -->

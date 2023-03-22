@@ -1,26 +1,19 @@
 .main-container {
     width: 500px;
     height: 850px;
-    overflow: hidden;
+    overflow: auto;
     background-color: #344FA1;
-}
-
-.page-main {
-    margin: 75px auto;
-    width: 430px;
-    height: 100%;
-    overflow: hidden;
 }
 
 .main-hidden {
     display: none;
 }
 
-/* .todo-input-container button{
-    border: none;
-    background-color:#344FA1 ;
-} */
-
+.page-main {
+    margin: 75px auto;
+    width: 430px;
+    height: 600px;
+}
 
 .main-header {
     display: flex;
@@ -36,8 +29,9 @@
     align-items: center;
     width: 40px;
     height: 35px;
-
+    
     border: none;
+    cursor: pointer;
 }
 
 .aside-button i {
@@ -53,8 +47,11 @@
     font-size: 30px;
 }
 
-.progress-title {
+.todo-progress-container {
     margin-top: 30px;
+}
+
+.progress-title {
     letter-spacing: 0.8px;
     color: #b4b4df;
 }
@@ -66,7 +63,7 @@
 
     margin-top: 20px;
     padding-left: 20px;
-    width: 400px;
+    width: 97%;
     height: 100px;
     border-radius: 20px;
 
@@ -82,13 +79,134 @@
     color: #b4b4df;
 }
 
-.progress-graph {
+/* .progress-graph {
     margin-top: 10px;
     width: 350px;
+} */
+
+progress {
+    width: 350px;
+    height: 5px;
+    margin-top: 20px;
+    border-radius: 10px;
+    position: relative;
 }
+  
+  progress::-webkit-progress-bar {
+    background-color: #b4b4df30;
+    border-radius: 10px;
+}
+  
+  progress::-webkit-progress-value {
+    background-color: #D707F2;
+    border-radius: 10px;
+    position: relative;
+}  
+
+
 
 .todo-tasks {
     margin-top: 30px;
+}
+
+.todo-title {
+    color: #b4b4df;
+}
+
+.todo-input-container {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-left: 15px;
+
+    width: 97%;
+    height: 70px;
+    border-radius: 20px;
+
+    background-color: #042159;
+    box-shadow: 3px 3px 10px 4px #04215990;
+}
+
+.todo-add-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 17px;
+
+    width: 30px;
+    height: 30px;
+    border: 2px solid #D707F2;
+    border-radius: 50%;
+    transition: box-shadow 0.3s ease, background-color 0.15s ease;
+
+    cursor: pointer;
+}
+
+.todo-add-button:hover {
+    background-color: #D707F220;
+    box-shadow: 0 0 5px 1px #D707F2;
+}
+
+.todo-add-button:active {
+    background-color: #D707F2;
+}
+
+.todo-add-button i {
+    font-size: 12px;
+    color: #b4b4df;
+}
+
+.todo-input {
+    width: 80%;
+}
+
+.todo-content-list li{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    padding-left: 15px;
+
+    width: 97%;
+    height: 70px;
+    border-radius: 20px;
+
+    background-color: #042159;
+    box-shadow: 3px 3px 10px 4px #04215990;
+}
+
+.todo-content-list input[type="checkbox"]{
+    display: none;
+}
+
+.todo-content-list input[type="checkbox"] + label{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    margin-right: 17px;
+    border:2px solid #D707F2;
+    border-radius: 50%;
+    transition: box-shadow 0.3s ease;
+
+    cursor: pointer;
+}
+
+.todo-content-list input[type="checkbox"] + label:hover {
+    box-shadow: 0 0 5px 1px #D707F2;
+}
+
+.todo-content-list input[type="checkbox"]:checked + label::after{
+    content:'✔';
+    line-height: 27px;
+    font-size: 15px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    border-radius: 30px;
+    background-color: #D707F2;
+
 }
 
 
