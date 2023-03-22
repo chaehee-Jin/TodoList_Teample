@@ -1,12 +1,12 @@
 class InformationEvent {
     static #instance = null;
     static getInstance() {
-        if (this.#instance == null) {
+        if(this.#instance == null) {
             this.#instance = new InformationEvent();
-
         }
         return this.#instance;
     }
+
     addEventPhotoChangeClick() {
         const infoPhoto = document.querySelector(".info-photo");
         infoPhoto.onclick = () => {
@@ -14,37 +14,34 @@ class InformationEvent {
             photoFile.click();
         }
     }
+
     addEventPhotoChange() {
         const photoFile = document.querySelector(".photo-file");
         photoFile.onchange = () => {
             FileService.getInstance().changePhoto();
-
-
         }
     }
-    addEventAboutMeModifyClick() {
-        const aboutMeModifyButton = document.querySelector(".m-aboutme");
-        aboutMeModifyButton.onclick = () => {
-            const aboutMeSaveButton = document.querySelector(".s-aboutme");
-            aboutMeSaveButton.classList.remove("button-hidden");
-            aboutMeModifyButton.classList.add("button-hidden");
+
+    addEventModifyAboutMeClick() {
+        const modifyAboutMeButton = document.querySelector(".m-aboutme");
+        modifyAboutMeButton.onclick = () => {
+            const saveAboutMeButton = document.querySelector(".s-aboutme");
+            saveAboutMeButton.classList.remove("button-hidden");
+            modifyAboutMeButton.classList.add("button-hidden");
 
             const infoInputContainers = document.querySelectorAll(".info-input-container");
             infoInputContainers.forEach(infoInputContainer => {
                 infoInputContainer.querySelector(".info-input").disabled = false;
 
             });
-
-
         }
-
     }
-    addEventAboutMeSaveClick() {
-        const aboutMeSaveButton = document.querySelector(".modify-button-aboutme");
-        aboutMeSaveButton.onclick = () => {
-            const aboutMeModifyButton = document.querySelector(".modify-button-aboutme");
-            aboutMeSaveButton.classList.remove("button-hidden");
-            aboutMeModifyButton.classList.add("button-hidden");
+    addEventSaveAboutMeClick() {
+        const saveAboutMeButton = document.querySelector(".s-aboutme");
+        saveAboutMeButton.onclick = () => {
+            const modifyAboutMeButton = document.querySelector(".m-aboutme");
+            saveAboutMeButton.classList.remove("button-hidden");
+            modifyAboutMeButton.classList.add("button-hidden");
 
             const infoInputContainers = document.querySelectorAll(".info-input-container");
             const userInfo = InformationService.getInstance().userInfo;
@@ -58,24 +55,26 @@ class InformationEvent {
             localStorage.setItem("userInfo", JSON.stringify(userInfo));
         }
     }
-    addEventIntroduceModifyClick() {
-        const IntroduceModifyButton = document.querySelector(".modify-button-introduce");
-        IntroduceModifyButton.onclick = () => {
-            const IntroduceSaveButton = document.querySelector(".modify-button-introduce");
-            IntroduceSaveButton.classList.remove("button-hidden");
-            IntroduceModifyButton.classList.add("button-hidden");
+    addEventModifyIntroduceClick() {
+        const modifyIntroduceButton = document.querySelector(".m-introduce");
+        modifyIntroduceButton.onclick = () => {
+
+            const saveIntroduceButton = document.querySelector(".s-introduce");
+            saveIntroduceButton.classList.remove("button-hidden");
+            modifyIntroduceButton.classList.add("button-hidden");
+
             const introduceInput = document.querySelector(".introduce-input");
             introduceInput.disabled = false;
 
         }
 
     }
-    addEventIntroduceSaveClick() {
-        const IntroduceSaveButton = document.querySelector(".modify-button-introduce");
-        IntroduceSaveButton.onclick = () => {
-            const IntroduceModifyButton = document.querySelector(".modify-button-aboutme");
-            IntroduceSaveButton.classList.remove("button-hidden");
-            IntroduceModifyButton.classList.add("button-hidden");
+    addEventSaveIntroduceClick() {
+        const saveIntroduceButton = document.querySelector(".s-introduce");
+        saveIntroduceButton.onclick = () => {
+            const modifyIntrodcueButton = document.querySelector(".m-introduce");
+            saveIntroduceButton.classList.remove("button-hidden");
+            modifyIntrodcueButton.classList.add("button-hidden");
             const introduceInput = document.querySelector(".introduce-input");
             introduceInput.disabled = true;
 
@@ -85,8 +84,6 @@ class InformationEvent {
 
 
             localStorage.setItem("userInfo", JSON.stringify(userInfo));
-
-
         }
     }
 }
@@ -94,9 +91,8 @@ class InformationEvent {
 class InformationService {
     static #instance = null;
     static getInstance() {
-        if (this.#instance == null) {
+        if(this.#instance == null) {
             this.#instance = new InformationService();
-
         }
         return this.#instance;
     }
@@ -106,82 +102,72 @@ class InformationService {
     loadInfo() {
         this.loadInfoPhoto();
         this.loadInfoUser();
-
     }
+
     loadInfoPhoto() {
         const infoPhotoImg = document.querySelector(".info-photo img");
         const infoPhoto = localStorage.getItem("infoPhoto");
-        if (localStorage.getItem("infoPhoto") == null) {
-
-            infoPhotoImg.src = "./images/noimage.jpg"
-        } else {
+        if(infoPhoto == null) {
+            infoPhotoImg.src = "./image/noimage.jpg";
+        }else {
             infoPhotoImg.src = infoPhoto;
-
-
         }
-
     }
 
     loadInfoUser() {
         this.userInfo = JSON.parse(localStorage.getItem("userInfo"));
-        if (this.userInfo == null) {
+
+        if(this.userInfo == null) {
             this.userInfo = {};
             return;
         }
         Object.keys(this.userInfo).forEach(key => {
             const infoInput = document.querySelectorAll(".info-input");
             infoInput.forEach(input => {
-                if (input.id == key) {
+                if(input.id == key) {
                     input.value = this.userInfo[key];
                 }
             })
-
         });
-        
-        if(typeof this.userInfo.introduce == 'undefined'){
+
+        if(typeof this.userInfo.introduce == "undefined"){
             return;
         }
         const introduceInput = document.querySelector(".introduce-input");
         introduceInput.value = this.userInfo.introduce;
-
     }
 }
 
 class FileService {
     static #instance = null;
     static getInstance() {
-        if (this.#instance == null) {
+        if(this.#instance == null) {
             this.#instance = new FileService();
-
         }
         return this.#instance;
     }
+
     changePhoto() {
         const photoForm = document.querySelector(".photo-form");
         const formData = new FormData(photoForm);
         const fileValue = formData.get("file");
-        let changFlag = true;
 
-        if (fileValue.size == 0) {
-           return;
+        if(fileValue.size == 0) {
+            return;
         }
 
         this.showPreview(fileValue);
-
-
     }
+
     showPreview(fileValue) {
         const fileReader = new FileReader();
 
         fileReader.readAsDataURL(fileValue);
 
         fileReader.onload = (e) => {
-            const photoimg = document.querySelector(".info-photo img");
-            photoimg.src = e.target.result;
-            localStorage.setItem("infoPhoto", photoimg.src);
-
-
+            const photoImg = document.querySelector(".info-photo img");
+            photoImg.src = e.target.result;
+            localStorage.setItem("infoPhoto", photoImg.src);
         }
-
     }
 }

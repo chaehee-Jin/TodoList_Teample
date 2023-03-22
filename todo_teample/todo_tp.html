@@ -54,7 +54,7 @@
             </div>
         </aside>
         <!-- TODO LIST -->
-        <main class="main-container todo-container">
+        <main class="main-container todo-container main-hidden">
             <div class="page-main">
                 <header class="main-header">
                     <button class="aside-button">
@@ -84,20 +84,30 @@
                 </div>
             </div>
         </main>
-       <!-- 유저 메인페이지 -->
+        <!-- 유저 메인페이지 -->
         <main class="main-container user-container">
             <div class="page-main">
                 <header class="main-header">
-                    <h1 class="main-title">User Information</h1>
+                    <button class="home-button">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </button>
+                    <!-- <h1 class="main-title">User Information</h1> -->
                 </header>
                 <!-- 유저 프로필 이미지(변경 및 삭제 가능) -->
-                <div class="info-photo">
-                    <form class="photo-form">
-                        <input type="file" class="photo-file" name="file">
-                    </form>
-                    <img class="photo" src="./image/cat.jpg">
-                    <div class="change-nav"></div>
+                <div class="info-photo-container">
+                    <div class="info-photo">
+                        <form class="photo-form">
+                            <input type="file" class="photo-file" name="file">
+                        </form>
+                        <img src="">
+                        <div class="change-nav">
+                            <button class="photo-button">
+                                <i class="fa-solid fa-camera"></i>
+                            </button>
+                        </div>
+                    </div>
                 </div>
+                
                 <!-- 유저 프로필 내용 -->
                 <div class="info-main">
                     <!-- 유저 정보(이름, 전화번호, 이메일, 홈페이지 주소) -->
@@ -108,7 +118,7 @@
                             <!-- !!톱니바퀴 모양과 체크모양을 수정버튼으로 줌 -->
                             <i class="fa-solid fa-gear"></i>
                         </button>
-                        <button class="modify-button s-aboutme button-hidden">
+                        <button class="modify-button s-aboutme button-hidden ">
                             <i class="fa-regular fa-circle-check"></i>
                         </button>
                     </h1>
@@ -140,8 +150,8 @@
                         <!-- Self Introduce 타이틀(수정, 삭제 버튼) -->
                         <h1 class="info-title">
                             Self Introduction
+                            <!-- !!톱니바퀴 모양과 체크모양을 수정버튼으로 줌 -->
                             <button class="modify-button m-introduce">
-                                <!-- !!톱니바퀴 모양을 수정버튼으로 줌, 그래서 하나만 필요!! -->
                                 <i class="fa-solid fa-gear"></i>
                             </button>
                             <button class="modify-button s-introduce button-hidden">
@@ -149,7 +159,7 @@
                             </button>
                         </h1>
                         <!-- 자기소개 입력창 -->
-                        <textarea class="introduce-input" disabled></textarea>
+                        <textarea class="introduce-input"></textarea>
                     </div>
                 </div>
             </div>
@@ -184,6 +194,10 @@
             </div>
         </div>
     </div>
+    <script src="./js/app.js"></script>
+    <script src="./js/information.js"></script>
+    <script src="./js/todo.js"></script>
+    <script src="./js/modal.js"></script>
 </body>
 
 </html>
