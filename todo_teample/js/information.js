@@ -51,8 +51,8 @@ class InformationEvent {
         const saveAboutMeButton = document.querySelector(".save-aboutme");
         saveAboutMeButton.onclick = () => {
             const modifyAboutMeButton = document.querySelector(".modify-aboutme");
-            saveAboutMeButton.classList.remove("button-hidden");
-            modifyAboutMeButton.classList.add("button-hidden");
+            modifyAboutMeButton.classList.remove("button-hidden");
+            saveAboutMeButton.classList.add("button-hidden");
 
             const infoInputContainers = document.querySelectorAll(".info-input-container");
             const userInfo = InformationService.getInstance().userInfo;
