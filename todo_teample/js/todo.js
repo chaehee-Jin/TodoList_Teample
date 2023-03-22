@@ -49,8 +49,16 @@ class TodoEvent {
     }
 
     addEventCheckboxClick() {
-        const inputCheckBox = document.querySelectorAll(".input-checkbox");
-        inputCheckBox
+        const inputCheckBoxes = document.querySelectorAll(".input-checkbox");
+        inputCheckBoxes.forEach((inputCheckBox, index) => {
+            inputCheckBox.onchange = () => {
+                if(inputCheckBox.checked) {
+                    TodoService.getInstance().completeTodoCheckbox(index);                   
+                } else {
+                    TodoService.getInstance().uncompleteTodoCheckbox(index);
+                }   
+            }
+        });
     }
 
 }
@@ -122,5 +130,19 @@ class TodoService {
 
         TodoEvent.getInstance().addEventRemoveTodoClick();
         TodoEvent.getInstance().addEventModifyTodoClick();
+        TodoEvent.getInstance().addEventCheckboxClick();
+        
+    }
+
+    completeTodoCheckbox(index) {
+        const inputCheckBoxes = document.querySelectorAll(".input-checkbox");
+        this.todoList[index].todoChecked = inputCheckBoxes[index].checked;
+        this.updateLocalStorage();
+    }
+    
+    uncompleteTodoCheckbox(index) {
+        const inputCheckBoxes = document.querySelectorAll(".input-checkbox");
+        this.todoList[index].todoChecked = inputCheckBoxes[index].checked;
+        this.updateLocalStorage();
     }
 }
